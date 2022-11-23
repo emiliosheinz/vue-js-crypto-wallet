@@ -1,6 +1,6 @@
 <script setup lang="ts">
-	import ButtonComponent from '../button/ButtonComponent.vue'
-	import type { Nft } from '../../types/nft'
+	import ButtonComponent from '@/components/button/ButtonComponent.vue'
+	import type { Nft } from '@/types/nft'
 
 	defineProps<{
 		nft: Nft

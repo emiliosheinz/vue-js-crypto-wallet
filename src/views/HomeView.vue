@@ -1,5 +1,5 @@
 <script setup lang="ts">
-	import NftCard from '../components/nft-card/NftCard.vue'
+	import NftCard from '@/components/nft-card/NftCard.vue'
 
 	import { ref } from 'vue'
 	import { getAllNfts } from '@/services/nft'
