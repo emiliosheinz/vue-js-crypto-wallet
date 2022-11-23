@@ -10,9 +10,9 @@ const router = createRouter({
 			component: HomeView,
 		},
 		{
-			path: '/wallet',
-			name: 'wallet',
-			component: () => import('../views/WalletView.vue'),
+			path: '/about',
+			name: 'about',
+			component: () => import('../views/AboutView.vue'),
 		},
 	],
 })

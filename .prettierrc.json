@@ -1,11 +1,11 @@
 {
-	"quoteProps": "as-needed",
-	"jsxSingleQuote": true,
-	"singleQuote": true,
-	"useTabs": true,
-	"tabWidth": 2,
-	"arrowParens": "avoid",
-	"semi": false,
-	"trailingComma": "es5",
-	"vueIndentScriptAndStyle": true
+  "quoteProps": "as-needed",
+  "jsxSingleQuote": true,
+  "singleQuote": true,
+  "useTabs": true,
+  "tabWidth": 2,
+  "arrowParens": "avoid",
+  "semi": false,
+  "trailingComma": "es5",
+  "vueIndentScriptAndStyle": true
 }
