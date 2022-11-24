@@ -1,9 +1,10 @@
 <script setup lang="ts">
 	import { ref } from 'vue'
-	import NftCard from '@/components/nft-card/NftCard.vue'
+	import NftCard from './components/nft-card/NftCard.vue'
 	import { getAllNfts } from '@/services/nft'
 	import type { Nft } from '@/types/nft'
 	import { useWalletStore } from '@/stores/wallet'
+	import SkeletonLoader from './components/skeleton-loader/SkeletonLoader.vue'
 
 	const hasError = ref(false)
 	const isLoading = ref(true)
@@ -27,20 +28,13 @@
 
 <template>
 	<main class="max-w-6xl m-auto">
-		<ul
-			v-if="isLoading"
-			class="flex justify-center flex-wrap gap-8 animate-pulse"
-		>
-			<li class="h-96 w-80 rounded-3xl overflow-hidden bg-slate-800"></li>
-			<li class="h-96 w-80 rounded-3xl overflow-hidden bg-slate-800"></li>
-			<li class="h-96 w-80 rounded-3xl overflow-hidden bg-slate-800"></li>
-			<li class="h-96 w-80 rounded-3xl overflow-hidden bg-slate-800"></li>
-			<li class="h-96 w-80 rounded-3xl overflow-hidden bg-slate-800"></li>
-			<li class="h-96 w-80 rounded-3xl overflow-hidden bg-slate-800"></li>
-		</ul>
+		<SkeletonLoader v-if="isLoading" />
 		<h1 v-else-if="hasError">Deu Ruim</h1>
-		<ul v-else class="flex justify-center flex-wrap gap-8">
-			<li v-for="nft in nfts" :key="nft.id">
+		<ul
+			v-else
+			class="px-5 pb-10 md:px-0 flex md:justify-center flex-wrap gap-4 md:gap-8"
+		>
+			<li v-for="nft in nfts" :key="nft.id" class="w-full md:w-auto">
 				<NftCard
 					:nft="nft"
 					:onBuyClick="pressedNft => wallet.addNft(pressedNft)"
