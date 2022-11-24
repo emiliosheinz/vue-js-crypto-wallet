@@ -4,6 +4,8 @@
 
 	defineProps<{
 		nft: Nft
+		onBuyClick?: (pressedNft: Nft) => void
+		isBuyButtonDisable?: boolean
 	}>()
 </script>
 
@@ -27,7 +29,12 @@
 					{{ nft.price }}
 				</div>
 			</div>
-			<ButtonComponent label="Buy" />
+			<ButtonComponent
+				:isDisabled="isBuyButtonDisable"
+				v-if="onBuyClick"
+				:onClick="() => onBuyClick?.(nft)"
+				label="Buy"
+			/>
 		</div>
 	</div>
 </template>
