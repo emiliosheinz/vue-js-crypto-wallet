@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '@/views/HomeView.vue'
+import HomeView from '@/views/home/HomeView.vue'
 
 export const routes = [
 	{
@@ -10,7 +10,7 @@ export const routes = [
 	{
 		path: '/wallet',
 		name: 'wallet',
-		component: () => import('@/views/WalletView.vue'),
+		component: () => import('@/views/wallet/WalletView.vue'),
 	},
 ]
 
