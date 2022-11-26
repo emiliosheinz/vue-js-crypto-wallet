@@ -23,5 +23,8 @@ export const useWalletStore = defineStore('wallet', {
 
 			this.nfts.push(nft)
 		},
+		removeNft(nftId: number) {
+			this.nfts = this.nfts.filter(nft => nft.id !== nftId)
+		},
 	},
 })
