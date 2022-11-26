@@ -6,7 +6,8 @@ A simple and fast Frontend NFTs store where you can see a list of NFTs and add t
 
 ## 💻 Preview
 
-![Banner of the application](/docs/preview.gif)
+![Preview of the application](/docs/preview.gif)
+
 
 ## 🔥 Used Technologies 
 - Vue.js: An approachable, performant and versatile framework for building web user interfaces;
@@ -37,6 +38,14 @@ A simple and fast Frontend NFTs store where you can see a list of NFTs and add t
 - `src/utils`: Utilitary functions use through the project;
 - `src/views`: Filles loaded based on the current route;
 - `src/views/$view/components`: View specific components;
+
+## 🚀 Performance
+
+![Performance of the application](/docs/performance.png)
+
+## ✅ Tests Coverage
+
+![Tests coverage](/docs/tests-coverage.png)
 
 ## 🔧 Running Locally
 
