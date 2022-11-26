@@ -39,11 +39,12 @@
 			v-else
 			class="px-5 pb-10 md:px-0 flex md:justify-center flex-wrap gap-4 md:gap-8"
 		>
-			<li v-for="nft in nfts" :key="nft.id" class="w-full md:w-auto">
+			<li v-for="(nft, index) in nfts" :key="nft.id" class="w-full md:w-auto">
 				<NftCard
 					:nft="nft"
 					:onBuyClick="pressedNft => wallet.addNft(pressedNft)"
 					:isBuyButtonDisabled="wallet.nfts.some(({ id }) => id === nft.id)"
+					:hasLoadingPriority="index === 0"
 				/>
 			</li>
 		</ul>

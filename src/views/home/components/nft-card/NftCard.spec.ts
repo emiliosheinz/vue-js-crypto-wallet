@@ -4,13 +4,13 @@ import NftCardVue from './NftCard.vue'
 import { makeNft } from '@/utils/tests'
 
 describe('Home NftCard', () => {
-	it('should render nft image', () => {
+	it('should render nft image with resize optimizations', () => {
 		const nft = makeNft()
 
 		const component = mount(NftCardVue, { props: { nft } })
 		const image = component.find('[data-testid="nft-image"]')
 
-		expect(image.attributes().src).toBe(nft.image.url)
+		expect(image.attributes().src).toBe(`${nft.image.url}&fit=clamp&w=320`)
 	})
 
 	it('should render nft collection name', () => {
@@ -82,5 +82,43 @@ describe('Home NftCard', () => {
 		const buyButton = component.find('[data-testid="buy-button"]')
 
 		expect(buyButton.attributes().disabled).toBeDefined()
+	})
+
+	it('should lazy load image when hasLoadingPriority is false', () => {
+		const nft = makeNft()
+
+		const component = mount(NftCardVue, {
+			props: {
+				nft,
+				onBuyClick: () => undefined,
+				isBuyButtonDisabled: true,
+				hasLoadingPriority: false,
+			},
+		})
+
+		const nftImage = component.find('[data-testid="nft-image"]')
+
+		const { loading, fetchpriority } = nftImage.attributes()
+		expect(loading).toBe('lazy')
+		expect(fetchpriority).toBe('auto')
+	})
+
+	it('should prioritize image loading when hasLoadingPriority is true', () => {
+		const nft = makeNft()
+
+		const component = mount(NftCardVue, {
+			props: {
+				nft,
+				onBuyClick: () => undefined,
+				isBuyButtonDisabled: true,
+				hasLoadingPriority: true,
+			},
+		})
+
+		const nftImage = component.find('[data-testid="nft-image"]')
+
+		const { loading, fetchpriority } = nftImage.attributes()
+		expect(loading).toBe('eager')
+		expect(fetchpriority).toBe('high')
 	})
 })

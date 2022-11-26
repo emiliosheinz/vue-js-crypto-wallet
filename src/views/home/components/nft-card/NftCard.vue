@@ -7,15 +7,19 @@
 		nft: Nft
 		onBuyClick?: (pressedNft: Nft) => void
 		isBuyButtonDisabled?: boolean
+		hasLoadingPriority?: boolean
 	}>()
 </script>
 
 <template>
 	<div class="w-full md:w-80 rounded-3xl overflow-hidden bg-white">
 		<img
-			:src="nft.image.url"
+			:src="`${nft.image.url}&fit=clamp&w=320`"
 			class="w-full h-80 object-cover"
 			data-testid="nft-image"
+			:fetchPriority="hasLoadingPriority ? 'high' : 'auto'"
+			:loading="hasLoadingPriority ? 'eager' : 'lazy'"
+			:alt="nft.collection.name"
 		/>
 		<div class="space-y-2 p-3">
 			<div class="flex flex-row">
