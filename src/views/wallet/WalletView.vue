@@ -7,7 +7,15 @@
 </script>
 
 <template>
+	<main v-if="!wallet.nfts.length" class="flex justify-center py-16 px-5">
+		<h2 class="text-4xl text-center max-w-xl text-white">
+			😅 You don't have any NFT in your wallet. Go back to the home screen and
+			buy some!
+		</h2>
+	</main>
+
 	<main
+		v-else
 		class="max-w-6xl m-auto p-3 sm:p-10 gap-5 sm:gap-10 flex justify-center flex-col-reverse lg:flex-row"
 	>
 		<section class="flex flex-col flex-1">
