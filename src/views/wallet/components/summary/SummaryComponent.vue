@@ -11,10 +11,14 @@
 		<table class="w-full">
 			<thead>
 				<tr>
-					<td><h2 class="font-bold text-2xl">Summary</h2></td>
+					<td>
+						<h2 class="font-bold text-2xl" data-testid="summary-title">
+							Summary
+						</h2>
+					</td>
 				</tr>
 			</thead>
-			<tbody>
+			<tbody data-testid="table-body">
 				<tr v-for="nft in nfts" :key="`summary-${nft.id}`">
 					<td>
 						<p class="font-light">#{{ nft.id }}</p>
@@ -29,9 +33,12 @@
 				<tr>
 					<td><p class="font-bold text-xl">Total</p></td>
 					<td>
-						<EthereumPrice :price="totalAmountInWallet" />
+						<EthereumPrice
+							:price="totalAmountInWallet"
+							data-testid="ethereum-price"
+						/>
 					</td>
-					<td class="flex justify-end">
+					<td class="flex justify-end" data-testid="dollar-price">
 						{{ ethereumToDollar(totalAmountInWallet) }}
 					</td>
 				</tr>
