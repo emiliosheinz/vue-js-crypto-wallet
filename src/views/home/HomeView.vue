@@ -29,7 +29,12 @@
 <template>
 	<main class="max-w-6xl m-auto">
 		<SkeletonLoader v-if="isLoading" />
-		<h1 v-else-if="hasError">Deu Ruim</h1>
+		<div v-else-if="hasError" class="flex justify-center py-16 px-5">
+			<h2 class="text-4xl text-center max-w-xl text-white">
+				🤒 Opss, it seems that something when wrong in our servers. Please, try
+				again later!
+			</h2>
+		</div>
 		<ul
 			v-else
 			class="px-5 pb-10 md:px-0 flex md:justify-center flex-wrap gap-4 md:gap-8"
@@ -38,7 +43,7 @@
 				<NftCard
 					:nft="nft"
 					:onBuyClick="pressedNft => wallet.addNft(pressedNft)"
-					:isBuyButtonDisable="wallet.nfts.some(({ id }) => id === nft.id)"
+					:isBuyButtonDisabled="wallet.nfts.some(({ id }) => id === nft.id)"
 				/>
 			</li>
 		</ul>
