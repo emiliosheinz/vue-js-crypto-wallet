@@ -6,26 +6,33 @@
 	defineProps<{
 		nft: Nft
 		onBuyClick?: (pressedNft: Nft) => void
-		isBuyButtonDisable?: boolean
+		isBuyButtonDisabled?: boolean
 	}>()
 </script>
 
 <template>
 	<div class="w-full md:w-80 rounded-3xl overflow-hidden bg-white">
-		<img :src="nft.image.url" class="w-full h-80 object-cover" />
+		<img
+			:src="nft.image.url"
+			class="w-full h-80 object-cover"
+			data-testid="nft-image"
+		/>
 		<div class="space-y-2 p-3">
 			<div class="flex flex-row">
 				<div class="flex flex-1 flex-col">
-					<p class="line-clamp-1 font-bold">{{ nft.collection.name }}</p>
-					<p class="font-light">#{{ nft.id }}</p>
+					<p class="line-clamp-1 font-bold" data-testid="collection-name">
+						{{ nft.collection.name }}
+					</p>
+					<p class="font-light" data-testid="nft-id">#{{ nft.id }}</p>
 				</div>
-				<EthereumPrice :price="nft.price" />
+				<EthereumPrice :price="nft.price" data-testid="ethereum-price" />
 			</div>
 			<ButtonComponent
-				:isDisabled="isBuyButtonDisable"
 				v-if="onBuyClick"
+				:isDisabled="isBuyButtonDisabled"
 				:onClick="() => onBuyClick?.(nft)"
 				label="Buy"
+				data-testid="buy-button"
 			/>
 		</div>
 	</div>
