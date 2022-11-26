@@ -6,6 +6,7 @@ type WalletStore = {
 }
 
 export const useWalletStore = defineStore('wallet', {
+	persist: true,
 	state: (): WalletStore => {
 		return { nfts: [] }
 	},
