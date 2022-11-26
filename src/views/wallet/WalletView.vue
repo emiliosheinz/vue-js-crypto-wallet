@@ -21,7 +21,10 @@
 		<section class="flex flex-col flex-1">
 			<ul class="space-y-4 sm:space-y-8">
 				<li v-for="nft in wallet.nfts" :key="nft.id">
-					<NftCard :nft="nft" />
+					<NftCard
+						:nft="nft"
+						:onDeletePress="nft => wallet.removeNft(nft.id)"
+					/>
 				</li>
 			</ul>
 		</section>
