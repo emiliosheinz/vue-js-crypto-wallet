@@ -12,7 +12,8 @@
 			width="9"
 			height="15"
 			class="pt-1"
+			data-testid="ethereum-symbol"
 		/>
-		{{ price }}
+		<span data-testid="price">{{ price }}</span>
 	</div>
 </template>
