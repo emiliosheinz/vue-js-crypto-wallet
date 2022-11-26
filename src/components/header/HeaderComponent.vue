@@ -3,6 +3,11 @@
 	import { useWalletStore } from '@/stores/wallet'
 
 	const wallet = useWalletStore()
+
+	function getItemsString(nftsQuantity: number) {
+		if (nftsQuantity === 1) return 'item'
+		return 'items'
+	}
 </script>
 
 <template>
@@ -20,7 +25,12 @@
 			<div class="flex space-x-1">
 				<div class="flex flex-col items-end text-white justify-start">
 					<p class="font-bold text-base">My Wallet</p>
-					<p class="font-normal text-sm -mt-1">{{ wallet.nfts.length }} item</p>
+					<p
+						class="font-normal text-sm -mt-1"
+						data-testid="wallet-items-amount"
+					>
+						{{ wallet.nfts.length }} {{ getItemsString(wallet.nfts.length) }}
+					</p>
 				</div>
 				<img
 					alt="Vue logo"
