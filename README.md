@@ -1,52 +1,46 @@
-# crypto-store
+# Crypto Store
 
-This template should help get you started developing with Vue 3 in Vite.
+A simple and fast Frontend NFTs store where you can see a list of NFTs and add them to your Wallet.
 
-## Recommended IDE Setup
+![Banner of the application](/docs/banner.png)
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+## 🔥 Used Technologies 
+- Vue.js: An approachable, performant and versatile framework for building web user interfaces;
+- Vue Routes: The official router for Vue.js;
+- Tailwind CSS: A utility-first CSS framework packed with classes like flex, pt-4, text-center and rotate-90 that can be composed to build any design, directly in your markup;
+- Pinia: The Vue Store that you will enjoy using;
+- Vitest: A Vite-native unit test framework. It's fast;
+- Axios: Promise based HTTP client for the browser and node.js.
 
-## Type Support for `.vue` Imports in TS
+## 📚 What did I learn?
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin) to make the TypeScript language service aware of `.vue` types.
+> 🎉 Over all, Vue.js!
 
-If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has also implemented a [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471#discussioncomment-1361669) that is more performant. You can enable it by the following steps:
+- How to manage Routes in Vue.js;
+- Conditional rendering in Vue.js;
+- Calling APIs in Vue.js;
+- State and Global State management in Vue.js with ref and Pinia;
+- Unite tests with Vitest for Vue.js.
 
-1. Disable the built-in TypeScript Extension
-    1) Run `Extensions: Show Built-in Extensions` from VSCode's command palette
-    2) Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
-2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
+## 🌳 Project structure
+- `src/assets`: Static assets such as svgs;
+- `src/components`: Global components;
+- `src/router`: Base config for the routes of the application;
+- `src/services`: Basically services related to API connection;
+- `src/stores`: Global stores based on Pinia;
+- `src/stores`: Global types of the application;
+- `src/utils`: Utilitary functions use through the project;
+- `src/views`: Filles loaded based on the current route;
+- `src/views/$view/components`: View specific components;
 
-## Customize configuration
+## 🔧 Running Locally
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+- Setup your Vue.js environment
+- Install JSON Server
+- Run `yarn`
+- Run `json-server --watch server.json --delay 300 --port 4000`
+- Run `yarn dev`
+- Access `http://localhost:5173`
 
-## Project Setup
-
-```sh
-npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
-```
-
-### Type-Check, Compile and Minify for Production
-
-```sh
-npm run build
-```
-
-### Run Unit Tests with [Vitest](https://vitest.dev/)
-
-```sh
-npm run test:unit
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
-```
+## 👨🏽‍💻 Contributors
+- @emiliosheinz
