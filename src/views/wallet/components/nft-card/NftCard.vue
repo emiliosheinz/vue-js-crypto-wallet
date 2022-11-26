@@ -7,13 +7,19 @@
 
 <template>
 	<div class="flex p-5 rounded-3xl bg-white space-x-5">
-		<img :src="nft.image.url" class="w-24 h-24 rounded-xl" />
+		<img
+			:src="nft.image.url"
+			class="w-24 h-24 rounded-xl"
+			data-testid="nft-image"
+		/>
 		<div class="flex flex-col justify-between">
 			<div>
-				<p class="line-clamp-1 font-bold">{{ nft.collection.name }}</p>
-				<p class="font-light">#{{ nft.id }}</p>
+				<p class="line-clamp-1 font-bold" data-testid="nft-collection-name">
+					{{ nft.collection.name }}
+				</p>
+				<p class="font-light" data-testid="nft-id">#{{ nft.id }}</p>
 			</div>
-			<EthereumPrice :price="nft.price" />
+			<EthereumPrice :price="nft.price" data-testid="nft-price" />
 		</div>
 		<div></div>
 	</div>
