@@ -14,7 +14,9 @@ export default defineConfig({
 	},
 	test: {
 		coverage: {
-			provider: 'istanbul',
+			provider: 'c8',
+			reporter: ['text', 'json', 'html'],
+			exclude: ['**/api/index.ts', '**/types/**', '**/*.spec.ts'],
 		},
 	},
 })
