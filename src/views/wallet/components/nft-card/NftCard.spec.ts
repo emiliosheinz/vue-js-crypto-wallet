@@ -5,7 +5,7 @@ import { describe, expect, it, vi } from 'vitest'
 import type { Nft } from '@/types/nft'
 
 describe('Wallet NftCard', () => {
-	it('should render nft image', () => {
+	it('should render nft image with resize optimizations', () => {
 		const nft = makeNft()
 
 		const component = mount(NftCard, {
@@ -13,7 +13,9 @@ describe('Wallet NftCard', () => {
 		})
 		const nftImage = component.find('[data-testid="nft-image"]')
 
-		expect(nftImage.attributes().src).toBe(nft.image.url)
+		expect(nftImage.attributes().src).toBe(
+			`${nft.image.url}&fit=clamp&w=100&h=100`
+		)
 	})
 
 	it('should render nft collection name', () => {

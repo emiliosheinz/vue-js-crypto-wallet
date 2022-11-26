@@ -8,9 +8,10 @@
 <template>
 	<div class="flex p-5 rounded-3xl bg-white space-x-5">
 		<img
-			:src="nft.image.url"
+			:src="`${nft.image.url}&fit=clamp&w=100&h=100`"
 			class="w-24 h-24 rounded-xl"
 			data-testid="nft-image"
+			:alt="nft.collection.name"
 		/>
 		<div class="flex flex-col justify-between flex-1">
 			<div>
@@ -27,7 +28,7 @@
 				data-testid="trash-can-btn"
 				@click="() => onDeletePress(nft)"
 			>
-				<img src="/src/assets/trash-can.svg" class="w-25 h-25 rounded-xl" />
+				<img src="/src/assets/trash-can.svg" width="25" height="25" />
 			</button>
 		</div>
 	</div>
