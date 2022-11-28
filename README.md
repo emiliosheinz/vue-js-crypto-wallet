@@ -17,7 +17,7 @@ A simple and fast Frontend NFTs store where you can see a list of NFTs and add t
 - Vitest: A Vite-native unit test framework. It's fast;
 - Axios: Promise based HTTP client for the browser and node.js.
 
-## 📚 What did I learn?
+## 📚 Applied Knowledge
 
 > 🎉 Over all, Vue.js!
 
