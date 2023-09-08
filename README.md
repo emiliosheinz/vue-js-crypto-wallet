@@ -55,6 +55,3 @@ A simple and fast Frontend NFTs store where you can see a list of NFTs and add t
 - Run `json-server --watch server.json --delay 300 --port 4000`
 - Run `yarn dev`
 - Access `http://localhost:5173`
-
-## 👨🏽‍💻 Contributors
-- [@emiliosheinz](https://github.com/emiliosheinz)
