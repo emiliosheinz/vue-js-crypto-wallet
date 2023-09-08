@@ -57,4 +57,4 @@ A simple and fast Frontend NFTs store where you can see a list of NFTs and add t
 - Access `http://localhost:5173`
 
 ## 👨🏽‍💻 Contributors
-- @emiliosheinz
+- [@emiliosheinz](https://github.com/emiliosheinz)
